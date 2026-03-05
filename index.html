@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>БАБЛО ПРИДИ 💰</title>
+    <style>
+        body {
+            /* Твоя картинка */
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Impact', sans-serif;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            color: white;
+            font-size: clamp(40px, 8vw, 80px);
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 5px 5px 0px #000;
+            margin-bottom: 20px;
+            z-index: 10;
+        }
+
+        .donate-btn {
+            background: #28a745;
+            color: white;
+            font-size: clamp(20px, 5vw, 40px);
+            padding: 20px 40px;
+            border: 4px solid #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+            z-index: 10;
+            animation: pulse-shake 0.6s infinite;
+            transition: 0.2s;
+            outline: none;
+        }
+
+        .donate-btn:hover {
+            transform: scale(1.1);
+            background: #218838;
+            animation: none;
+        }
+
+        @keyframes pulse-shake {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(2deg); }
+            50% { transform: scale(1) rotate(0deg); }
+            75% { transform: scale(1.05) rotate(-2deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .money {
+            position: absolute;
+            font-size: 30px;
+            pointer-events: none;
+            z-index: 5;
+            animation: fly 2s linear forwards;
+        }
+
+        @keyframes fly {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>дайте мне денег</h1>
+
+    <button class="donate-btn" onclick="startChaos()">КНОПКА БАБЛО</button>
+
+    <audio id="myAudio" loop>
+        <source src="sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function startChaos() {
+            const audio = document.getElementById("myAudio");
+            audio.play();
+
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createMoney, i * 50);
+            }
+        }
+
+        function createMoney() {
+            const money = document.createElement('div');
+            money.innerText = '💵';
+            money.className = 'money';
+            money.style.left = Math.random() * 100 + 'vw';
+            money.style.top = '100vh';
+            money.style.fontSize = Math.random() * (40 - 20) + 20 + 'px';
+            money.style.animationDuration = Math.random() * (3 - 1) + 1 + 's';
+            document.body.appendChild(money);
+            setTimeout(() => { money.remove(); }, 2000);
+        }
+    </script>
+
+</body>
+</html>
