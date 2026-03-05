@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дайте мне денег</title>
+    <style>
+        /* Обнуляем отступы браузера */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Указываем твою картинку как фон */
+            background-image: url('bg.jpg');
+            
+            /* Настройки отображения фона */
+            background-size: cover;       /* Растянуть на весь экран */
+            background-position: center;  /* Центрировать изображение */
+            background-repeat: no-repeat; /* Не повторять картинку */
+            background-attachment: fixed; /* Зафиксировать фон при скролле */
+            
+            /* Центрируем текст по середине экрана */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Чтобы не было лишних полос прокрутки */
+            overflow: hidden; 
+        }
+
+        h1 {
+            /* Стиль текста как в мемах */
+            color: white;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: clamp(40px, 10vw, 120px); /* Размер подстраивается под экран */
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            
+            /* Жирная черная обводка, чтобы текст читался на любом фоне */
+            text-shadow: 
+                -3px -3px 0 #000,  
+                 3px -3px 0 #000,
+                -3px  3px 0 #000,
+                 3px  3px 0 #000,
+                 5px  5px 15px rgba(0,0,0,0.8);
+            
+            padding: 20px;
+            user-select: none; /* Чтобы текст нельзя было случайно выделить */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>дайте мне денег,или я вскрою вам горло</h1>
+
+</body>
+</html>
